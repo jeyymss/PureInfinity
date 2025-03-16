@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import RevealOnSroll from '../RevealOnSroll'
 import emailjs from 'emailjs-com'
+import SelectDropdown from '../SelectDropdown'
 
 
 const Contact = () => {
     const [formData, setFormData] = useState({
         name:"",
         email: "",
+        service: "",
         message: "",
     });
 
@@ -16,9 +18,23 @@ const Contact = () => {
 
         emailjs.sendForm(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, e.target, import.meta.env.VITE_PUBLIC_KEY).then((result) => {
             alert("Message Sent!");
-            setFormData({name: "", email: "", message: "" })
+            setFormData({name: "", email: "", service: "", message: "" })
         }).catch(() => alert("Oops! Something went wrong. Please try again."));
     };
+
+    const services = [
+        "Business Plan Template & Guide",
+        "Marketing Strategy Toolkit",
+        "Startup Launch Blueprint",
+        "Financial Forecasting Spreadsheet",
+        "Sales Funnel Optimization Guide",
+        "Brand Positioning Workbook",
+        "Customer Retention Strategy Guide",
+        "Product Pricing Calculator",
+        "Social Media Growth Playbook",
+        "Time Management & Productivity System",
+        "Other Concerns",
+    ];
 
   return (
     <section
@@ -26,7 +42,7 @@ const Contact = () => {
         className='min-h-screen flex items-center justify-center py-20'
     >
         <RevealOnSroll>
-            <div className='px-4 w-full min-w-[300px] md:w-[500px] sm:w-2/3 p-6'>
+            <div className='px-4 w-full min-w-[300px] md:w-[500px]  p-6'>
                 <h2 className='text-4xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center'> Get in Touch </h2>
                 <form className='space-y-6' onSubmit={handleSubmit}>
 
@@ -59,6 +75,20 @@ const Contact = () => {
                             })}
                         />
                     </div>
+
+                    <div className='relative'>
+                        <div className='flex flex-col space-y-1'>
+                            <SelectDropdown
+                                name="service"
+                                id="service"
+                                options={services}
+                                required
+                                onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                            />
+                        </div>
+                    </div>
+                        
+                    <input type="hidden" name="service" value={formData.service} />
 
                     <div className='relative'>
                         <textarea 
