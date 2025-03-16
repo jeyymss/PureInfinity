@@ -3,24 +3,6 @@ import RevealOnSroll from '../RevealOnSroll'
 
 const Services = () => {
 
-  const frontendSkills = [
-    "React",
-    "Vue",
-    "TypeScript",
-    "TailwindCSS",
-    "Svelte",
-  ]
-  
-  const backendSkills = [
-    "Node.js",
-    "Python",
-    "AWS",
-    "MongoDB",
-    "GraphQL",
-  ]
-
-
-
   return (
     <section
         id="services"

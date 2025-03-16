@@ -2,25 +2,6 @@ import React from 'react'
 import RevealOnSroll from '../RevealOnSroll'
 
 const About = () => {
-
-  const frontendSkills = [
-    "React",
-    "Vue",
-    "TypeScript",
-    "TailwindCSS",
-    "Svelte",
-  ]
-  
-  const backendSkills = [
-    "Node.js",
-    "Python",
-    "AWS",
-    "MongoDB",
-    "GraphQL",
-  ]
-
-
-
   return (
     <section
         id="about"
