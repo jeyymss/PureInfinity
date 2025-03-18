@@ -43,7 +43,7 @@ const Contact = () => {
     >
         <RevealOnSroll>
             <div className='px-4 w-full min-w-[300px] md:w-[500px]  p-6'>
-                <h2 className='text-4xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center'> Get in Touch </h2>
+                <h2 className='text-6xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center'> Get in Touch </h2>
                 <form className='space-y-6' onSubmit={handleSubmit}>
 
                     <div className='relative'>
