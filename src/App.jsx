@@ -8,7 +8,6 @@ import About from './components/sections/About'
 import Services from './components/sections/Services'
 import Contact from './components/sections/Contact'
 import Footer from './components/Footer'
-import { Analytics } from '@vercel/analytics/next'
 
 
 function App() {
@@ -24,10 +23,7 @@ function App() {
         <Services />
         <Contact />
         <Footer />
-
-        
       </div>
-      
     </>
   )
 }
