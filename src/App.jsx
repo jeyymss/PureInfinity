@@ -8,6 +8,7 @@ import About from './components/sections/About'
 import Services from './components/sections/Services'
 import Contact from './components/sections/Contact'
 import Footer from './components/Footer'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 
 
 function App() {
@@ -23,6 +24,8 @@ function App() {
         <Services />
         <Contact />
         <Footer />
+
+        <SpeedInsights />
       </div>
     </>
   )
